@@ -69,17 +69,27 @@
 
       body {
         margin: 0;
-        padding: 1rem; /* Added padding for visible background */
+        padding: 0;
         background-color: var(--bg);
         font-family: "Inter", sans-serif;
         color: var(--text);
+        overflow: hidden;
+      }
+
+      .scroll-container {
+        height: 100vh;
+        overflow-y: auto;
+        scroll-snap-type: y mandatory;
+      }
+
+      .section {
+        min-height: 100vh;
         display: flex;
         justify-content: center;
         align-items: center;
-        min-height: 100vh; /* Changed to min-height */
-        overflow: auto; /* Allow scrolling if needed */
-        position: relative;
-        box-sizing: border-box; /* Include padding in height calculation */
+        padding: 1rem;
+        box-sizing: border-box;
+        scroll-snap-align: start;
       }
 
       .container {
@@ -212,34 +222,209 @@
         transform: scale(1.05);
       }
 
+      .scroll-indicator {
+        position: fixed;
+        bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        color: var(--accent);
+        font-size: 2rem;
+        animation: bounce 2s infinite;
+        cursor: pointer;
+        z-index: 10;
+        transition: opacity 0.3s ease;
+      }
+
+      .projects-container {
+        display: flex;
+        flex-direction: column;
+        background: var(--card);
+        border-radius: 2rem;
+        padding: 3rem;
+        box-shadow: 0 0 10px #00000030;
+        max-width: min(1000px, 90vw);
+        width: 62%;
+        animation: fadein 1s ease-out;
+        margin: 1rem;
+      }
+
+      .projects-title {
+        font-size: 3rem;
+        font-family: SERPENTINE, serif;
+        text-align: center;
+        margin-bottom: 2rem;
+        color: var(--accent);
+      }
+
+      .projects-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .project-card {
+        background: #1e1611;
+        border-radius: 1rem;
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1.5rem;
+      }
+
+      .project-info {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .project-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        flex: 1;
+      }
+
+      .project-icon-container {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      .project-icon {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+      }
+
+      .project-title {
+        font-size: 1.2rem;
+        font-family: "Assassin$", serif;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .project-stars {
+        font-size: 0.8rem;
+        color: var(--accent);
+        display: flex;
+        align-items: center;
+        gap: 0.2rem;
+      }
+
+      .project-description {
+        color: var(--subtext);
+        font-size: 0.9rem;
+        line-height: 1.5;
+      }
+
+      .project-buttons {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        margin-left: auto;
+      }
+
+      .project-btn {
+        background: var(--accent);
+        color: var(--btn-text);
+        border: none;
+        padding: 0.6rem;
+        border-radius: 0.5rem;
+        font-size: 1.1rem;
+        font-family: "Assassin$", serif;
+        font-weight: 600;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+      }
+
+      .project-btn:hover {
+        transform: scale(1.05);
+      }
+
+      @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+          transform: translateX(-50%) translateY(0);
+        }
+        40% {
+          transform: translateX(-50%) translateY(-10px);
+        }
+        60% {
+          transform: translateX(-50%) translateY(-5px);
+        }
+      }
+
       @media (max-width: 768px) {
-        body {
-          padding: 0.5rem; /* Smaller padding on mobile */
+        .section {
+          min-height: 100vh;
+          padding: 5rem 0.5rem 3rem 0.5rem;
+          justify-content: flex-start;
+          padding-top: max(5rem, env(safe-area-inset-top, 5rem));
         }
         
         .container {
           flex-direction: column;
           align-items: center;
           padding: 2rem;
-          width: 78.5%; /* Slightly narrower for better spacing */
+          width: 78.5%;
           gap: 2rem;
-          margin: 1rem auto; /* Centered with margin */
+          margin: 1rem auto;
         }
 
         .left, .right {
           align-items: center;
           text-align: center;
-          width: 100%; /* Full width of container */
+          width: 100%;
         }
 
         .links, .tags {
           justify-content: center;
         }
         
-        /* Consistent button widths on mobile */
         .social {
           width: 100%;
           box-sizing: border-box;
+        }
+
+        .projects-container {
+          width: 78.5%;
+          margin: 1rem auto;
+          padding: 2rem;
+        }
+
+        .projects-grid {
+          flex-direction: column;
+        }
+
+        .project-card {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 1rem;
+        }
+
+        .project-header {
+          width: 100%;
+        }
+
+        .project-buttons {
+          align-self: flex-start;
+          margin-left: 0;
+        }
+
+        .project-info {
+          gap: 0.5rem;
         }
       }
 
@@ -256,48 +441,115 @@
     </style>
   </head>
   <body>
-    <div class="container">
-      <div class="left">
-        <div class="avatar-border">
-          <img src="./assets/images/profile.webp" alt="Avatar" class="avatar" />
+    <div class="scroll-container">
+      <div class="section">
+        <div class="container">
+          <div class="left">
+            <div class="avatar-border">
+              <img src="./assets/images/profile.webp" alt="Avatar" class="avatar" />
+            </div>
+            <div class="tags">
+              <span class="tag">INDIE GAME DEVELOPER</span>
+              <span class="tag">STUDENT</span>
+            </div>
+            <div class="name">SEKIRYL</div>
+            <div class="description">
+              HELLO! I AM A STUDENT, AN INDIE GAME DEVELOPER AND A GNU/LINUX ENTHUSIAST.
+            </div>
+            <div class="links">
+              <button onclick="location.href='mailto:hi@sekiryl.is-a.dev'" class="secondary-btn">
+                <i class="fas fa-envelope"></i>CONTACT
+              </button>
+            </div>
+          </div>
+          <div class="right">
+            <a href="/telegram" class="social" target="_blank">
+              <span>TELEGRAM</span><i class="fab fa-telegram-plane"></i>
+            </a>
+            <a href="/discord" class="social" target="_blank">
+              <span>DISCORD</span><i class="fab fa-discord"></i>
+            </a>
+            <a href="/reddit" class="social" target="_blank">
+              <span>REDDIT</span><i class="fab fa-reddit-alien"></i>
+            </a>
+            <a href="/instagram" class="social" target="_blank">
+              <span>INSTAGRAM</span><i class="fab fa-instagram"></i>
+            </a>
+            <a href="/github" class="social" target="_blank">
+              <span>GITHUB</span><i class="fab fa-github"></i>
+            </a>
+          </div>
         </div>
-        <div class="tags">
-          <span class="tag">INDIE GAME DEVELOPER</span>
-          <span class="tag">STUDENT</span>
-        </div>
-        <div class="name">SEKIRYL</div>
-        <div class="description">
-          HELLO! I AM A STUDENT, AN INDIE GAME DEVELOPER AND A GNU/LINUX ENTHUSIAST.
-        </div>
-        <div class="links">
-          <button onclick="location.href='mailto:hi@sekiryl.is-a.dev'" class="secondary-btn">
-            <i class="fas fa-envelope"></i>CONTACT
-          </button>
-          <button class="secondary-btn" onclick="location.href='/services'">
-            <i class="fas fa-gear"></i>SERVICES
-          </button>
+        <div class="scroll-indicator" onclick="document.querySelector('.scroll-container').scrollTo({top: window.innerHeight, behavior: 'smooth'})">
+          <i class="fas fa-chevron-down"></i>
         </div>
       </div>
-      <div class="right">
-        <a href="/telegram" class="social" target="_blank">
-          <span>TELEGRAM</span><i class="fab fa-telegram-plane"></i>
-        </a>
-        <a href="/discord" class="social" target="_blank">
-          <span>DISCORD</span><i class="fab fa-discord"></i>
-        </a>
-        <a href="/reddit" class="social" target="_blank">
-          <span>REDDIT</span><i class="fab fa-reddit-alien"></i>
-        </a>
-        <a href="/instagram" class="social" target="_blank">
-          <span>INSTAGRAM</span><i class="fab fa-instagram"></i>
-        </a>
-        <a href="/github" class="social" target="_blank">
-          <span>GITHUB</span><i class="fab fa-github"></i>
-        </a>
+      
+      <div class="section">
+        <div class="projects-container">
+          <div class="projects-title">PROJECTS</div>
+          <div class="projects-grid" id="projects-grid">
+            <!-- Projects loaded from config.json -->
+          </div>
+        </div>
       </div>
     </div>
 
     <script>
+      // Load projects from config
+      async function loadProjects() {
+        try {
+          const response = await fetch('./config.json');
+          const config = await response.json();
+          const grid = document.getElementById('projects-grid');
+          
+          for (const project of config.projects) {
+            const card = document.createElement('div');
+            card.className = 'project-card';
+            
+            // Fetch GitHub stars (handle rate limiting)
+            let stars = '';
+            try {
+              const githubResponse = await fetch(`https://api.github.com/repos/${project.github}`);
+              if (githubResponse.ok) {
+                const repoData = await githubResponse.json();
+                if (repoData.stargazers_count > 0) {
+                  stars = `<span class="project-stars"><i class="fas fa-star"></i> ${repoData.stargazers_count}</span>`;
+                }
+              }
+            } catch (error) {
+              // Silently fail - just don't show stars
+            }
+            
+            const buttons = `
+              ${project.site ? `<a href="${project.site}" target="_blank" class="project-btn">
+                <i class="fas fa-external-link-alt"></i>
+              </a>` : ''}
+              <a href="https://github.com/${project.github}" target="_blank" class="project-btn">
+                <i class="fab fa-github"></i>
+              </a>
+            `;
+            
+            card.innerHTML = `
+              <div class="project-header">
+                <div class="project-icon-container">
+                  <img src="${project.icon}" alt="${project.title}" class="project-icon" style="width: ${project.iconSize || '40px'}; height: ${project.iconSize || '40px'};">
+                </div>
+                <div class="project-info">
+                  <div class="project-title">${project.title} ${stars}</div>
+                  <div class="project-description">${project.description}</div>
+                </div>
+              </div>
+              <div class="project-buttons">${buttons}</div>
+            `;
+            
+            grid.appendChild(card);
+          }
+        } catch (error) {
+          console.error('Failed to load projects:', error);
+        }
+      }
+
       class Sakura {
         constructor(selector) {
           const el = document.querySelector(selector);
@@ -407,6 +659,22 @@
       }
 
       new Sakura("body");
+      loadProjects();
+
+      // Hide chevron when scrolled to projects section
+      const scrollContainer = document.querySelector('.scroll-container');
+      const chevron = document.querySelector('.scroll-indicator');
+      
+      scrollContainer.addEventListener('scroll', () => {
+        const scrollTop = scrollContainer.scrollTop;
+        const windowHeight = window.innerHeight;
+        
+        if (scrollTop > windowHeight * 0.5) {
+          chevron.style.opacity = '0';
+        } else {
+          chevron.style.opacity = '1';
+        }
+      });
     </script>
 
   </body>
