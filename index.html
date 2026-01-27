@@ -123,9 +123,18 @@
 
       .avatar-border {
       display: inline-block;
-      padding: 3.7px; /* Exact border size */
       border-radius: 50%;
-      background: linear-gradient(135deg, #3B1E0F, #7B3F1D, #C07E50, #E1B382);
+      position: relative;
+      }
+
+      .avatar-decoration {
+        position: absolute;
+        top: -10%;
+        left: -10%;
+        width: 120%;
+        height: 120%;
+        pointer-events: none;
+        z-index: 2;
       }
 
       .avatar {
@@ -447,6 +456,7 @@
           <div class="left">
             <div class="avatar-border">
               <img src="./assets/images/profile.webp" alt="Avatar" class="avatar" />
+              <img src="https://cdn.discordapp.com/avatar-decoration-presets/a_9034e8f9670d1d1bb773cebba4ecf6ce.png?passthrough=true" alt="Avatar Decoration" class="avatar-decoration" />
             </div>
             <div class="tags">
               <span class="tag">INDIE GAME DEVELOPER</span>
