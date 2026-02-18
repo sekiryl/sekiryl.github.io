@@ -3,14 +3,14 @@
     {
       "icon": "https://cdn.sekiryl.is-a.dev/logo/dotfiles.png",
       "iconSize": "40px",
-      "title": "HYPRDOTS",
+      "title": "Hyprdots",
       "description": "My Hyprland/Arch Linux dotfiles featuring a beautiful desktop environment setup",
       "github": "sekiryl/hyprdots"
     },
     {
       "icon": "https://cdn.sekiryl.is-a.dev/logo/todo.png",
       "iconSize": "40px",
-      "title": "SEKIDO",
+      "title": "Sekido",
       "description": "Beautiful, Customizable and Self-Hosted Progressive Web App for managing todos and tracking daily habits",
       "github": "sekiryl/sekido",
       "site": "https://sekido-demo.pages.dev"
@@ -18,14 +18,14 @@
     {
       "icon": "https://cdn.sekiryl.is-a.dev/logo/todominal.png",
       "iconSize": "40px",
-      "title": "TODOMINAL",
+      "title": "Todominal",
       "description": "Minimal todo list application for terminal and rofi, built with C++",
       "github": "sekiryl/todominal"
     },
     {
       "icon": "https://github.com/sekiryl/tag-prompt-generator/blob/main/assets/images/logo.png?raw=true",
       "iconSize": "40px",
-      "title": "TAG PROMPT GENERATOR",
+      "title": "Tag Prompt Generator",
       "description": "Sleek, lightweight tag-based prompt generator built for artists and AI prompt engineers",
       "github": "sekiryl/tag-prompt-generator",
       "site": "https://prompt-gen.sekiryl.is-a.dev/"
@@ -33,7 +33,7 @@
     {
       "icon": "https://github.com/sekiryl/sekiratte/blob/main/assets/images/logo.png?raw=true",
       "iconSize": "40px",
-      "title": "SEKIRATTE",
+      "title": "Sekiratte",
       "description": "Dark, moody color scheme inspired by Sekiro: Shadows Die Twice, built on Catppuccin structure",
       "github": "sekiryl/sekiratte",
       "site": "https://sekiratte.sekiryl.is-a.dev/"
@@ -41,7 +41,7 @@
     {
       "icon": "https://github.com/sekiryl/wallpapers/blob/main/assets/images/logo.png?raw=true",
       "iconSize": "40px",
-      "title": "WALLPAPERS",
+      "title": "Wallpapers",
       "description": "Curated collection of handcrafted, minimal and abstract wallpapers with previews and categorization",
       "github": "sekiryl/wallpapers",
       "site": "https://walls.sekiryl.is-a.dev/"

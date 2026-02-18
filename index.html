@@ -24,6 +24,10 @@
       href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.0/css/all.min.css"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -44,19 +48,6 @@
     }
     </script>
     <style>
-      @font-face {
-        font-family: "SERPENTINE";
-        src: url("./assets/fonts/SERPENTINE.woff2") format("woff2");
-        font-weight: normal;
-        font-style: normal;
-      }
-      @font-face {
-        font-family: "Assassin$";
-        src: url("./assets/fonts/Assassin.woff2") format("woff2");
-        font-weight: normal;
-        font-style: normal;
-      }
-
       :root {
         --bg: #231e1c;
         --card: #2a231e;
@@ -65,6 +56,7 @@
         --text: #e3d8c9;
         --subtext: #a09585;
         --btn-text: #231e1c;
+        --highlight: #9a2a2a;
       }
 
       body {
@@ -127,16 +119,6 @@
       position: relative;
       }
 
-      .avatar-decoration {
-        position: absolute;
-        top: -10%;
-        left: -10%;
-        width: 120%;
-        height: 120%;
-        pointer-events: none;
-        z-index: 2;
-      }
-
       .avatar {
         width: 100px;
         height: 100px;
@@ -157,19 +139,22 @@
         padding: 0.3rem 0.7rem;
         font-size: 0.75rem;
         border-radius: 100px;
-        font-family: "Assassin$", serif;
+        font-family: "Rubik", sans-serif;
       }
 
       .name {
-        font-size: 5rem;
-        font-family: SERPENTINE, serif;
+        font-size: 4rem;
+        font-family: Rubik, sans-serif;
+        font-weight: 800;
+        font-style: italic;
+        text-shadow: 3px 3px 0px var(--highlight);
       }
 
       .description {
         color: var(--subtext);
-        font-size: 0.95rem;
-        font-family: "Assassin$", serif;
-        font-weight: 600;
+        font-size: 1.1rem;
+        font-family: "Rubik", sans-serif;
+        font-weight: 400;
         line-height: 1.8;
       }
 
@@ -192,7 +177,7 @@
         gap: 0.5rem;
         cursor: pointer;
         transition: all 0.3s ease;
-        font-family: "Assassin$", serif;
+        font-family: "Rubik", sans-serif;
         font-weight: 600;
       }
 
@@ -216,7 +201,7 @@
         padding: 1rem 1.8rem;
         font-size: 1.3rem;
         font-weight: 600;
-        font-family: "Assassin$", serif;
+        font-family: "Rubik", sans-serif;
         border-radius: 2rem;
         cursor: pointer;
         transition: transform 0.3s ease;
@@ -259,10 +244,13 @@
 
       .projects-title {
         font-size: 3rem;
-        font-family: SERPENTINE, serif;
+        font-family: Rubik, sans-serif;
+        font-weight: 800;
+        font-style: italic;
         text-align: center;
         margin-bottom: 2rem;
-        color: var(--accent);
+        color: var(--text);
+        text-shadow: 3px 3px 0px var(--highlight);
       }
 
       .projects-grid {
@@ -312,7 +300,7 @@
 
       .project-title {
         font-size: 1.2rem;
-        font-family: "Assassin$", serif;
+        font-family: "Rubik", sans-serif;
         font-weight: 600;
         display: flex;
         align-items: center;
@@ -329,6 +317,7 @@
 
       .project-description {
         color: var(--subtext);
+        font-family: "Rubik", sans-serif;
         font-size: 0.9rem;
         line-height: 1.5;
       }
@@ -347,7 +336,7 @@
         padding: 0.6rem;
         border-radius: 0.5rem;
         font-size: 1.1rem;
-        font-family: "Assassin$", serif;
+        font-family: "Rubik", sans-serif;
         font-weight: 600;
         cursor: pointer;
         transition: transform 0.2s ease;
@@ -456,37 +445,39 @@
           <div class="left">
             <div class="avatar-border">
               <img src="./assets/images/profile.webp" alt="Avatar" class="avatar" />
-              <img src="https://cdn.discordapp.com/avatar-decoration-presets/a_9034e8f9670d1d1bb773cebba4ecf6ce.png?passthrough=true" alt="Avatar Decoration" class="avatar-decoration" />
             </div>
             <div class="tags">
-              <span class="tag">INDIE GAME DEVELOPER</span>
-              <span class="tag">STUDENT</span>
+              <span class="tag">Indie Game Developer</span>
+              <span class="tag">Student</span>
             </div>
             <div class="name">SEKIRYL</div>
             <div class="description">
-              HELLO! I AM A STUDENT, AN INDIE GAME DEVELOPER AND A GNU/LINUX ENTHUSIAST.
+              Hello! I am a Student, an Indie Game Developer and a GNU/Linux enthusiast.
             </div>
             <div class="links">
               <button onclick="location.href='mailto:hi@sekiryl.is-a.dev'" class="secondary-btn">
-                <i class="fas fa-envelope"></i>CONTACT
+                <i class="fas fa-envelope"></i>Contact
+              </button>
+              <button onclick="location.href='https://backloggd.com/u/sekiryl'" class="secondary-btn">
+                <i class="fas fa-gamepad"></i>Games
               </button>
             </div>
           </div>
           <div class="right">
             <a href="/telegram" class="social" target="_blank">
-              <span>TELEGRAM</span><i class="fab fa-telegram-plane"></i>
+              <span>Telegram</span><i class="fab fa-telegram-plane"></i>
             </a>
             <a href="/discord" class="social" target="_blank">
-              <span>DISCORD</span><i class="fab fa-discord"></i>
+              <span>Discord</span><i class="fab fa-discord"></i>
             </a>
             <a href="/reddit" class="social" target="_blank">
-              <span>REDDIT</span><i class="fab fa-reddit-alien"></i>
+              <span>Reddit</span><i class="fab fa-reddit-alien"></i>
             </a>
             <a href="/instagram" class="social" target="_blank">
-              <span>INSTAGRAM</span><i class="fab fa-instagram"></i>
+              <span>Instagram</span><i class="fab fa-instagram"></i>
             </a>
             <a href="/github" class="social" target="_blank">
-              <span>GITHUB</span><i class="fab fa-github"></i>
+              <span>GitHub</span><i class="fab fa-github"></i>
             </a>
           </div>
         </div>
