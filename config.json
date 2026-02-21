@@ -2,14 +2,14 @@
   "projects": [
     {
       "icon": "https://cdn.sekiryl.is-a.dev/logo/dotfiles.png",
-      "iconSize": "40px",
+      "iconSize": "50px",
       "title": "Hyprdots",
       "description": "My Hyprland/Arch Linux dotfiles featuring a beautiful desktop environment setup",
       "github": "sekiryl/hyprdots"
     },
     {
       "icon": "https://cdn.sekiryl.is-a.dev/logo/todo.png",
-      "iconSize": "40px",
+      "iconSize": "60px",
       "title": "Sekido",
       "description": "Beautiful, Customizable and Self-Hosted Progressive Web App for managing todos and tracking daily habits",
       "github": "sekiryl/sekido",
@@ -17,14 +17,14 @@
     },
     {
       "icon": "https://cdn.sekiryl.is-a.dev/logo/todominal.png",
-      "iconSize": "40px",
+      "iconSize": "70px",
       "title": "Todominal",
       "description": "Minimal todo list application for terminal and rofi, built with C++",
       "github": "sekiryl/todominal"
     },
     {
       "icon": "https://github.com/sekiryl/tag-prompt-generator/blob/main/assets/images/logo.png?raw=true",
-      "iconSize": "40px",
+      "iconSize": "45px",
       "title": "Tag Prompt Generator",
       "description": "Sleek, lightweight tag-based prompt generator built for artists and AI prompt engineers",
       "github": "sekiryl/tag-prompt-generator",
