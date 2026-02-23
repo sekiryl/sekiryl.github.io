@@ -1,4 +1,27 @@
 {
+  "socials": {
+    "telegram": {
+      "username": "@sekiryl",
+      "avatar": "https://cdn5.telesco.pe/file/c27p5iVDRmLHNbJLLAa8_1mbbUGWto-9c__qeQATx4Vp7eI3z8gZ2mv_Te5q79JJK2CHk53Hk9nHQvbOqJvHrA5sc_YZjublQfm3546ilz000mfzOEejvdMkxUydUWlDzqSHQWOYVNVl7kOpQj6mwJ5MDOzcKSSnTMEkbcJfJZX8ci_Kh8jGvM3i-xiG4OHezRB7kyYi68oC4Eif5hVZWwPm80pAU0N2XgL6OWR7jDbB9ntm28p10wsCZcdkHKgQD33L6sL7mXLW7MzNlzunBwlCA8Z9zH1h_WZOBxOOxREWUky2Eyc5qDGifjXcSMaIstzAAgjXCNUmhrbMp5hxvw.jpg"
+    },
+    "discord": {
+      "username": "sekiryl",
+      "avatar": "https://cdn.discordapp.com/avatars/1052568567012393032/e15f508c4af342410758a3ee8bdec1f2.webp?size=512",
+      "decoration": "https://cdn.discordapp.com/avatar-decoration-presets/a_9034e8f9670d1d1bb773cebba4ecf6ce.png?passthrough=true"
+    },
+    "reddit": {
+      "username": "u/sekiryl",
+      "avatar": "https://styles.redditmedia.com/t5_eryq76/styles/profileIcon_z98z7klagvkg1.png?s=1d7be5f6d83356a80917976293ced9ecdc91818f"
+    },
+    "instagram": {
+      "username": "@sekiryl",
+      "avatar": ""
+    },
+    "github": {
+      "username": "@sekiryl",
+      "avatar": "https://avatars.githubusercontent.com/u/114310783?v=4"
+    }
+  },
   "projects": [
     {
       "icon": "https://cdn.sekiryl.is-a.dev/logo/dotfiles.png",

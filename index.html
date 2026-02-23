@@ -129,6 +129,22 @@
         border: 3px solid var(--highlight);
       }
 
+      .avatar-decoration {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 120px;
+        height: 120px;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .avatar-decoration.show {
+        opacity: 1;
+      }
+
       .tags {
         display: flex;
         gap: 0.5rem;
@@ -446,13 +462,14 @@
         <div class="container">
           <div class="left">
             <div class="avatar-border">
-              <img src="./assets/images/profile.webp" alt="Avatar" class="avatar" />
+              <img id="avatar" src="./assets/images/profile.webp" alt="Avatar" class="avatar" />
+              <img id="avatar-decoration" src="" alt="" class="avatar-decoration" />
             </div>
             <div class="tags">
               <span class="tag">Indie Game Developer</span>
               <span class="tag">Student</span>
             </div>
-            <div class="name">SEKIRYL</div>
+            <div id="name" class="name">SEKIRYL</div>
             <div class="description">
               Hello! I am a Student, an Indie Game Developer and a GNU/Linux enthusiast.
             </div>
@@ -466,19 +483,19 @@
             </div>
           </div>
           <div class="right">
-            <a href="/telegram" class="social" target="_blank">
+            <a href="/telegram" class="social" data-platform="telegram" target="_blank">
               <span>Telegram</span><i class="fab fa-telegram-plane"></i>
             </a>
-            <a href="/discord" class="social" target="_blank">
+            <a href="/discord" class="social" data-platform="discord" target="_blank">
               <span>Discord</span><i class="fab fa-discord"></i>
             </a>
-            <a href="/reddit" class="social" target="_blank">
+            <a href="/reddit" class="social" data-platform="reddit" target="_blank">
               <span>Reddit</span><i class="fab fa-reddit-alien"></i>
             </a>
-            <a href="/instagram" class="social" target="_blank">
+            <a href="/instagram" class="social" data-platform="instagram" target="_blank">
               <span>Instagram</span><i class="fab fa-instagram"></i>
             </a>
-            <a href="/github" class="social" target="_blank">
+            <a href="/github" class="social" data-platform="github" target="_blank">
               <span>GitHub</span><i class="fab fa-github"></i>
             </a>
           </div>
@@ -663,6 +680,38 @@
 
       new Sakura("body");
       loadProjects();
+
+      // Social hover effect
+      (async () => {
+        const config = await fetch('./config.json').then(r => r.json());
+        const avatar = document.getElementById('avatar');
+        const decoration = document.getElementById('avatar-decoration');
+        const name = document.getElementById('name');
+        const defaultAvatar = avatar.src;
+        const defaultName = name.textContent;
+
+        document.querySelectorAll('.social').forEach(link => {
+          const platform = link.dataset.platform;
+          const data = config.socials[platform];
+          
+          link.addEventListener('mouseenter', () => {
+            avatar.src = data.avatar || defaultAvatar;
+            avatar.onerror = () => avatar.src = defaultAvatar;
+            name.textContent = data.username;
+            
+            if (data.decoration) {
+              decoration.src = data.decoration;
+              decoration.classList.add('show');
+            }
+          });
+          
+          link.addEventListener('mouseleave', () => {
+            avatar.src = defaultAvatar;
+            name.textContent = defaultName;
+            decoration.classList.remove('show');
+          });
+        });
+      })();
 
       // Hide chevron when scrolled to projects section
       const scrollContainer = document.querySelector('.scroll-container');
